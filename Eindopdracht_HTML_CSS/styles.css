@@ -1,0 +1,150 @@
+.parentcontainer {
+    display: grid;
+    box-sizing: border-box;
+    border: 3px solid black;
+    padding: 2px;
+    margin: 1px;
+    font-size: 2em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    grid-template-areas: 
+    "header"
+    "nav"
+    "content"
+    "aside-links"
+    "aside-rechts"
+    "footer";
+
+}
+
+header {
+
+/*   Ipv de grid column (dus eerst start en dan end) te gebruiken 
+om de riien en de kolommen te specificeren, 
+kan er ook gekozen worden voor de grid-area. 
+Dan moet er wel in de hoofd container aan worden gegeven hoe 
+de grid-template-areas eruit moeten zien. Zie hierboven. 
+
+    grid-column: 1 / 4;
+    grid-row: 1 / 1; */
+    border: darkred solid 5px;
+
+    grid-area: header;
+    background-color: burlywood;
+    text-align: center;
+}
+
+nav {
+    border: darkred solid 5px;
+    background-color: lightseagreen;
+
+
+/*    Zie hierboven
+    grid-column: 1 / 1;
+    grid-row: 2 / 4;*/
+    grid-area: nav;
+
+}
+
+nav ul li{
+    list-style-type: none;
+
+}
+nav ul li a{
+    text-decoration: none;
+    font-size: 0.7em;
+    color: black;
+}
+
+a:hover {
+    color: seagreen;
+}
+
+.aside-links {
+    grid-area: aside-links;
+    padding: 10px;
+    background-color: grey;
+    border: darkred solid 5px;
+}
+
+.collage img{
+    column-count: 1;
+    width: 75%;
+    }
+
+main {
+    border: darkred solid 5px;
+    background-color: darksalmon;
+    padding: 10px;
+/*    Zie comment boven
+    grid-column: 2/ 3;
+    grid-row: 2 /4; */
+    grid-area: content;
+
+}
+
+main img {
+    width: 70%;
+}
+
+
+
+.aside-rechts {
+    grid-area: aside-rechts;
+    padding: 10px;
+
+    background-color:lightblue;
+    border: darkred solid 5px;
+
+
+}
+footer {
+    border: darkred solid 5px;
+    background-color: indianred;
+    padding: 10px;
+
+/* Zie comment boven
+    grid-row: 4;
+    grid-column: 1 / 4;*/
+    grid-area: footer;
+}
+
+
+button {
+    background-color: chartreuse;
+    font-size: 1.5rem;
+
+}
+
+p iframe {
+    width: 80%;
+}
+
+
+@media (min-width: 800px) {
+    .parentcontainer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px fr 200px;
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "content aside-rechts"
+        "aside-links aside-links"
+        "footer footer";
+    }
+
+}
+
+@media (min-width: 1054px) {
+    .parentcontainer {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 200px 200px 1fr 200px;
+        grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "aside-links content aside-rechts"
+        "footer footer  footer";
+    }
+
+}
